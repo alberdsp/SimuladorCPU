@@ -1,6 +1,6 @@
 package Main;
 
-//import modelo.*;
+import modelo.*;
 
 /**
  * Programa Simulador_CPU ABF 2023
@@ -17,15 +17,7 @@ public class Main {
 
 		menu.cabecera();
 		
-		    int ganttTime[];
-		    int ganttProcNo[];
-		    int ganttCount = 0;
-		    int ganttTimeCount = 0;
-		    int maxBurstTime;
-		    float timeQuantum = 0;
-		    float avgWaitingTime = 0;
-		    float avgTurnaroundTime = 0;
-
+		    Fcsf fcsf = new Fcsf();
 		
 
 	}
