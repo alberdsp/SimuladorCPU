@@ -8,27 +8,36 @@ package modelo;
 public class RoundRobin extends Proceso{
 	
 
-	public void setQuantum(int quantum) {
-		this.quantum = quantum;
-	}
-	int quantum;
-	public RoundRobin(String nombre, int duracion,int tllegada,int quantum) {
+	
+	int tiemporestante;
+	
+	
+
+
+	public RoundRobin(String nombre, int duracion,int tllegada) {
 		
 		super(nombre,duracion,tllegada);
-		this.quantum = quantum;
 		
+		this.tiemporestante = duracion;
 	}
 	
 	
+	
 	/**
-	 * @return devuelve el quantum
+	 * @return vevuelve tiempo restante de proceso
 	 */
-	public int getQuantum() {
-		return quantum;
+	public int getTiemporestante() {
+		return tiemporestante;
 	}
+
+
 	/**
-	 * @param establece el tiempo quantum de proceso
+	 * @param establece tiempo restante de proceso
 	 */
+	public void setTiemporestante(int tiemporestante) {
+		this.tiemporestante = tiemporestante;
+	}
+	
 	
 	
 }

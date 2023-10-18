@@ -92,7 +92,7 @@ public class Pintar_objeto {
      public String pintar_t_medio_espera(int tiempototal,int nprocesos) {
  		
  		
-    	 String strtiempomedio= " El tiempo medio de proceso ha sido:   ";  
+    	 String strtiempomedio= " El tiempo medio de espera por proceso ha sido:   ";  
     	 
     	  strtiempomedio = strtiempomedio.concat(Integer.toString(tiempototal/nprocesos)+ " milisegundos.");
  		
