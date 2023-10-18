@@ -12,9 +12,9 @@ public class RoundRobin extends Proceso{
 		this.quantum = quantum;
 	}
 	int quantum;
-	public RoundRobin(String nombre, Integer duracion,int quantum) {
+	public RoundRobin(String nombre, int duracion,int tllegada,int quantum) {
 		
-		super(nombre,duracion);
+		super(nombre,duracion,tllegada);
 		this.quantum = quantum;
 		
 	}

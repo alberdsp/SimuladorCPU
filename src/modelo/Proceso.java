@@ -19,14 +19,15 @@ public abstract class Proceso {
 
 
 
-
-
-	public Proceso(String nombre, Integer duracion, Integer tllegada, Integer tespera, Integer tproceso) {
+ /*
+  * método constructor
+  */
+	public Proceso(String nombre, Integer duracion, Integer tllegada) {
 	this.nombre = nombre;
 	this.duracion = duracion;
 	this.tllegada = tllegada;
-	this.tespera = tespera;
-	this.tproceso = tproceso;
+	this.tespera = 0;
+	this.tproceso = 0;
 	this.finalizado = false;
 	
 }

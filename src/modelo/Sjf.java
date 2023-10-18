@@ -5,9 +5,9 @@ package modelo;
 public class Sjf extends Proceso {
 	
 	
-	public Sjf(String nombre, Integer duracion) {
+	public Sjf(String nombre, int duracion,int tllegada ) {
 		
-		super(nombre,duracion);
+		super(nombre,duracion,tllegada);
 		
 	}
 	

@@ -15,7 +15,7 @@ public class Menu {
 		System.out.println("");
 		System.out.println("");
 		System.out.println(" Vamos a realizar la simulacion de 3 procesos ");
-		System.out.println(" evaluando el clico de procesamiento acorde a ");
+		System.out.println(" evaluando el ciclo de procesamiento acorde a ");
 		System.out.println(" FCFS, SJF  Y ROUND ROBIN ");
 		System.out.println("");
 		System.out.println("");
