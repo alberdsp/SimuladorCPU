@@ -137,14 +137,14 @@ public class Procesador {
 		int procesosfin = 0; // procesos finalizados
 		// vamos a recorrer los procesos mientras no esten todos finalizados
 		while (finalizado == false) {
-           
+
 			// recorremos para concatenar los procesos y pintarlos
 			for (RoundRobin proceso : procesos) {
 
 				if (proceso.getFinalizado() == false) {
 					// establecemos el tiempo de espera
 					proceso.setTespera(duracionacumulada);
-					duracionacumulada = duracionacumulada + proceso.getDuracion();
+
 					// acumulamos el tiempo de espera total
 					tiempoesperasuma = tiempoesperasuma + proceso.getTespera();
 					// almacenamos la cadenas que luego imprimiran por pantalla
@@ -153,25 +153,26 @@ public class Procesador {
 					// de bloque será el del quantum, por el contrario será el tiempo restante
 
 					if (proceso.getTiemporestante() >= quantum) {
+						duracionacumulada = duracionacumulada + quantum;
 						grant = grant.concat(pintaobjeto.pintar_grant(proceso.getNombre(), quantum));
 						proceso.setTiemporestante(proceso.getTiemporestante() - quantum);
 					} else {
-
+						duracionacumulada = duracionacumulada + proceso.getDuracion();
 						grant = grant
 								.concat(pintaobjeto.pintar_grant(proceso.getNombre(), proceso.getTiemporestante()));
 						proceso.setTiemporestante(0);
 						proceso.setFinalizado(true);
 
 					}
-                       // si el proceso es mayor que el quantum pintamos el tiempo en el quantum
-					if (proceso.getDuracion()>quantum) {
-					strduracion = strduracion.concat(pintaobjeto.pintar_linea_tiempo(proceso.getNombre(),
-							quantum, Integer.toString(duracionacumulada)));
-					}else {
-						
+					// si el proceso es mayor que el quantum pintamos el tiempo en el quantum
+					if (proceso.getDuracion() > quantum) {
+						strduracion = strduracion.concat(pintaobjeto.pintar_linea_tiempo(proceso.getNombre(), quantum,
+								String.valueOf(duracionacumulada)));
+					} else {
+
 						strduracion = strduracion.concat(pintaobjeto.pintar_linea_tiempo(proceso.getNombre(),
-								proceso.getDuracion(), Integer.toString(duracionacumulada)));
-						
+								proceso.getTiemporestante(), Integer.toString(duracionacumulada)));
+
 					}
 					strtiempos = strtiempos.concat(pintaobjeto.pintar_tiempos(proceso.getNombre(),
 							proceso.getDuracion(), Integer.toString(proceso.getTespera())));
@@ -185,15 +186,13 @@ public class Procesador {
 					}
 				}
 			}
-			
+
 			// si estan todos los procesos de la lista completado finalizamos todo
 			if (procesosfin == procesos.size()) {
-				
+
 				finalizado = true;
-				
-				
+
 			}
-			
 
 		}
 
